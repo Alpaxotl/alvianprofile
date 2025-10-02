@@ -1,0 +1,369 @@
+/* --- Variabel Warna dan Font --- */
+:root {
+  --color-primary-red: #D51013;
+  --color-accent-red-light: #FF3F3F; /* Lingkaran dekoratif */
+  --color-accent-orange: #FFAE0D; /* Teks Rating/Aksen */
+  --color-accent-light: #D9D9D9; /* Abu-abu terang, Garis pembatas */
+  --color-black: #000000;
+  --color-education-accent: #EC621D; /* Oranye untuk Education section */
+}
+
+/* --- Global Reset & Font --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--color-black);
+  line-height: 1.5;
+  background: var(--color-white); 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --- Wrapper Utama (Mengganti Inline Styling di div teratas) --- */
+.main-wrapper {
+  width: 1440px; /* Lebar tetap sesuai desain asli */
+  height: 3619px; /* Tinggi total sesuai desain asli */
+  position: relative; 
+  background: white;
+  margin: 0 auto; /* Tengah di layar */
+  overflow: hidden; 
+}
+
+/* Base Section Styling - Menggunakan Absolute Positioning secara agresif */
+.section {
+  width: 1440px;
+  position: absolute; /* Semua bagian di-absolute untuk meniru layering desain */
+  left: 0;
+}
+
+/* --- DEKORASI SUDUT DI BODY (Mirip Design Asli) --- */
+/* Sudut Kiri Atas */
+.main-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 215px; height: 217px;
+  left: -4px; top: -4px;
+  background: var(--color-primary-red);
+  border-radius: 9999px;
+  z-index: 5; 
+}
+/* Sudut Kanan Atas */
+.main-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 215px; height: 217px;
+  left: 1230px; top: -5px;
+  background: var(--color-primary-red);
+  border-radius: 9999px;
+  z-index: 5;
+}
+
+
+/* --- 1. HEADER SECTION (MERAH ATAS) --- */
+.header-section {
+  top: 0;
+  height: 872px; 
+  background-color: var(--color-primary-red);
+  color: var(--color-text-light);
+}
+
+/* Navbar */
+.navbar a {
+  position: absolute;
+  top: 36px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Content Positioning (mengikuti angka X, Y dari desain) */
+.rating-bar {
+  position: absolute;
+  left: 67px;
+  top: 173px;
+  color: var(--color-accent-orange);
+  font-size: 32px;
+  font-weight: 700;
+  z-index: 5;
+}
+
+.title {
+  position: absolute;
+  width: 832px;
+  left: 73px;
+  top: 213px;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1.1;
+  z-index: 5;
+}
+
+.author {
+  position: absolute;
+  left: 399px;
+  top: 535px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 5;
+}
+
+.tagline-wrapper {
+  position: absolute;
+  left: 82px;
+  top: 554px;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+}
+
+.tagline-line {
+  width: 7px;
+  height: 94px;
+  background: var(--color-accent-light);
+  margin-right: 18px;
+}
+
+.tagline-text {
+  width: 236px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* --- DEKORASI FOTO & LINGKARAN --- */
+.large-red-circle {
+  position: absolute;
+  width: 404px; height: 400px;
+  left: 949px; top: 272px;
+  background: var(--color-accent-red-light);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.profile-photo {
+  width: 472px; height: 674px;
+  left: 894px; top: 173px;
+  position: absolute;
+  object-fit: cover;
+  z-index: 2;
+}
+
+/* --- POKEBALL STRIP ATAS --- */
+.pokeball-strip-top {
+  position: absolute;
+  bottom: 25px; /* Sesuai dengan top: 847px dari 872px */
+  left: 0;
+  width: 100%;
+  height: 27px;
+  background: var(--color-black);
+  z-index: 10;
+}
+
+.pokeball-center-top {
+  position: absolute;
+  left: 610px;
+  top: 752px;
+  width: 202px; height: 218px;
+  background: var(--color-black);
+  border-radius: 50%; /* Dibuat bulat sesuai permintaan */
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokeball-center-inner {
+  width: 116px; height: 122px;
+  background: var(--color-gray-light);
+  border-radius: 50%;
+  border: 10px solid var(--color-black);
+}
+
+
+/* --- 2. EDUCATION SECTION (PUTIH TENGAH) --- */
+.education-section {
+  top: 873px;
+  height: 1124px; /* 1997px - 873px */
+  background-color: var(--color-white);
+  padding: 0; /* Menghilangkan padding agar konten bisa di-absolute */
+  overflow: hidden;
+}
+
+.landscape-bg {
+  width: 2028px; height: 1136px;
+  left: -291px; top: 0; /* Relatif terhadap education-section */
+  position: absolute;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.education-content h2 {
+  position: absolute;
+  left: 110px; top: 97px;
+  font-size: 50px;
+  font-weight: 700;
+  z-index: 2;
+}
+/* ... positioning elemen pendidikan lainnya ... */
+
+/* --- POKEBALL STRIP TENGAH --- */
+.pokeball-strip-middle {
+  position: absolute;
+  bottom: 25px; 
+  left: 0;
+  width: 100%;
+  height: 27px;
+  background: var(--color-black);
+  z-index: 10;
+}
+
+.pokeball-center-middle {
+  position: absolute;
+  left: 610px;
+  top: 1902px; /* Dihitung dari top 0 wrapper */
+  width: 202px; height: 218px;
+  background: var(--color-black);
+  border-radius: 50%; 
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 3. EXPERIENCE SECTION (MERAH BAWAH) --- */
+.experience-section {
+  top: 2022px;
+  height: 1597px; 
+  background-color: var(--color-primary-red);
+  color: var(--color-text-light);
+  padding: 0;
+  overflow: hidden;
+}
+
+.experience-title {
+  position: absolute;
+  width: 832px;
+  left: 38px; top: 84px;
+  font-size: 96px;
+  font-weight: 700;
+  z-index: 5;
+}
+
+/* Replikasi Dekorasi Kompleks di Area Experience */
+.exp-card {
+  position: absolute;
+  /* ... akan ditambahkan positioning X/Y spesifik untuk setiap kartu ... */
+}
+
+/* Replikasi Garis Pembatas (Sesuai posisi X/Y asli) */
+.line-divider-v-1 {
+  position: absolute;
+  width: 7px; height: 213px;
+  left: 555px; top: 2304px;
+  background: var(--color-accent-light);
+  z-index: 5;
+}
+
+/* --- POKEBALL STRIP BAWAH (Garis Hitam Paling Bawah) --- */
+.pokeball-strip-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 27px;
+  background: var(--color-black);
+  z-index: 10;
+}
+
+.deco-corner-bottom-left {
+  position: absolute;
+  width: 215px; height: 217px;
+  left: -4px; bottom: -150px;
+  background: var(--color-primary-red);
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.carousel-container {
+  position: absolute; /* Menggunakan absolute agar sesuai dengan desain Anda */
+  width: 800px; /* Ukuran yang sesuai untuk carousel */
+  height: 1050px;
+  overflow: hidden; 
+  border: 5px solid #EC621D;
+  z-index: 5; /* Pastikan di atas background landscape */
+}
+
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gaya Tombol Navigasi */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 24px;
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.back-to-top-button {
+  position: fixed; /* Membuat tombol melayang (tetap di layar) */
+  bottom: 30px; /* Jarak dari bawah layar */
+  right: 30px; /* Jarak dari kanan layar */
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 50px; /* Memusatkan panah vertikal */
+  border-radius: 50%; /* Membuat tombol bulat */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 999; /* Pastikan tombol selalu di atas */
+  cursor: pointer;
+  text-decoration: none; /* Menghilangkan underline */
+  transition: background-color 0.3s;
+}
+
+.back-to-top-button:hover {
+  background-color: #D51013; /* Berubah warna menjadi merah primer saat di-hover */
+}
+
+/* NOTE: CSS layout utama (header, strip, dll.) dari jawaban sebelumnya 
+ harus ditambahkan di atas atau di bawah blok ini agar tata letak bekerja */
+
+/* ... dan elemen dekoratif lainnya ... */
