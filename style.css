@@ -1,4 +1,11 @@
 /* --- Variabel Warna dan Font --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* INI YANG PALING PENTING */
+}
+
 :root {
   --color-primary-red: #D51013;
   --color-accent-red-light: #FF3F3F; /* Lingkaran dekoratif */
